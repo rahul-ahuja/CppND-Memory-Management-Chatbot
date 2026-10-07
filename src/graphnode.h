@@ -12,7 +12,7 @@ class GraphEdge;
 class GraphNode
 {
 private:
-    //// STUDENT CODE
+    //// Optimization CODE
     ////
 
     // data handles (owned)
@@ -23,7 +23,7 @@ private:
     ChatBot *_chatBot;
 
     ////
-    //// EOF STUDENT CODE
+    //// EOF Optimization CODE
 
     // proprietary members
     int _id;
@@ -46,13 +46,13 @@ public:
     void AddEdgeToParentNode(GraphEdge *edge);
     void AddEdgeToChildNode(GraphEdge *edge);
 
-    //// STUDENT CODE
+    //// Optimization CODE
     ////
 
     void MoveChatbotHere(ChatBot *chatbot);
 
     ////
-    //// EOF STUDENT CODE
+    //// EOF Optimization CODE
 
     void MoveChatbotToNewNode(GraphNode *newNode);
 };

@@ -88,7 +88,7 @@ void ChatBotFrameImagePanel::paintNow()
 void ChatBotFrameImagePanel::render(wxDC &dc)
 {
     // load backgroud image from file
-    wxString imgFile = imgBasePath + "sf_bridge.jpg";
+    wxString imgFile = imgBasePath + "sf_bridge_inner.jpg";
     wxImage image;
     image.LoadFile(imgFile);
 
@@ -114,11 +114,13 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
     // allow for PNG images to be handled
     wxInitAllImageHandlers();
 
-    //// STUDENT CODE
+    //// OPTIMIZATION CODE
     ////
 
     // create chat logic instance
-    _chatLogic = new ChatLogic(); 
+    //_chatLogic = new ChatLogic(); 
+    //_chatLogic(new ChatLogic());
+    _chatLogic = std::make_unique<ChatLogic>();
 
     // pass pointer to chatbot dialog so answers can be displayed in GUI
     _chatLogic->SetPanelDialogHandle(this);
@@ -127,18 +129,18 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
     _chatLogic->LoadAnswerGraphFromFile(dataPath + "src/answergraph.txt");
 
     ////
-    //// EOF STUDENT CODE
+    //// EOF OPTIMIZATION CODE
 }
 
 ChatBotPanelDialog::~ChatBotPanelDialog()
 {
-    //// STUDENT CODE
+    //// OPTIMIZATION CODE
     ////
 
-    delete _chatLogic;
+    //delete _chatLogic;
 
     ////
-    //// EOF STUDENT CODE
+    //// EOF OPTIMIZATION CODE
 }
 
 void ChatBotPanelDialog::AddDialogItem(wxString text, bool isFromUser)
