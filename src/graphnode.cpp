@@ -11,7 +11,7 @@ GraphNode::~GraphNode()
     //// Optimization CODE
     ////
 
-    delete _chatBot; 
+    //delete _chatBot; 
 
     ////
     //// EOF Optimization CODE
