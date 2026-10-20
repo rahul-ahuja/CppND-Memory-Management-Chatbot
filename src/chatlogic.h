@@ -20,7 +20,7 @@ private:
     //std::vector<GraphNode *> _nodes;
     std::vector<std::unique_ptr<GraphNode>> _nodes; 
     //std::vector<GraphEdge *> _edges;
-    //std::vector<std::unique_ptr<GraphEdge>> _edges; 
+    std::vector<std::shared_ptr<GraphEdge>> _edges; 
 
     ////
     //// EOF OPTIMIZATION CODE

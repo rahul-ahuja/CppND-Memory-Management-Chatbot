@@ -28,10 +28,12 @@ void GraphNode::AddEdgeToParentNode(GraphEdge *edge)
 }
 
 //void GraphNode::AddEdgeToChildNode(GraphEdge *edge)
-void GraphNode::AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge)
+//void GraphNode::AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge)
+void GraphNode::AddEdgeToChildNode(std::shared_ptr<GraphEdge> edge)
 {
     //_childEdges.push_back(edge);
-    _childEdges.push_back(std::move(edge));
+    //_childEdges.push_back(std::move(edge));
+    _childEdges.push_back(edge);
 }
 
 //// Optimization CODE
